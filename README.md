@@ -36,3 +36,30 @@ Uruchomienie pakietu odbywa się z wykorzystaniem pliku launch:
 ```bash
 ros2 launch camera_subscriber camera_node.launch.py
 ```
+
+## Uruchomienie w kontenerze
+Pobieramy obraz ROS:
+```bash
+docker pull ros:humble
+```
+Wyłączamy kontrolę dostępu do X11:
+```bash
+xhost +
+```
+Uruchomienie kontenera:
+```bash
+docker run -it --privileged \
+-v ~"sciezka do pakietu na hoscie":"sciezka do pakietu w kontenerze" \
+-v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+-e DISPLAY=$DISPLAY \
+--net=host \
+--user root \
+--name=ros2_docker ros:humble
+```
+W pseudoterminalu instaluemy paczke usb-cam:
+```bash
+apt update
+apt-get install ros-humble-usb-cam
+```
+Uruchomienie paczki wewnatrz kontenera jest analogiczne do powyzszego.
+
