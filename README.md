@@ -5,7 +5,7 @@ Pakiet camera_subscriber jest pakietem systemu ROS 2, który demonstruje możliw
 
 Pakiet subskrybuje strumień wideo z kamery i wykorzystuje go do utworzenia okna graficznego, w którym użytkownik może wykonywać kliknięcia myszą. Położenie kliknięcia (powyżej lub poniżej środka ekranu) interpretowane jest jako polecenie ruchu manipulatora w określonym kierunku.
 
-Rozwiązanie to stanowi prosty przykład połączenia danych wizyjnych, interfejsu użytkownika oraz sterowania ruchem robota w systemie ROS 2.
+Rozwiązanie to stanowi prosty przykład połączenia paczki obslługi kamery USB, OpenCV oraz sterowania ruchem robota w systemie ROS 2.
 
 ## Zakres funkcjonalny
 Pakiet camera_subscriber realizuje następujące funkcje:
